@@ -1,0 +1,357 @@
+/* 页面整体背景：与你提供的图片相近的米白色 */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f6f4ee;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  color: #222;
+}
+
+.page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+}
+
+.hero {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.hero-text {
+  flex: 1.2;
+}
+
+.hero-photo {
+  flex: 0 0 220px;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-img {
+  width: 220px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+  margin: 0 0 10px;
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.hero-subtitle {
+  margin: 0 0 12px;
+  font-size: 16px;
+  color: #444;
+}
+
+.hero-intro {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.hero-contact {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.hero-contact a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.hero-contact a:hover {
+  text-decoration: underline;
+}
+
+.hero-links {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.hero-links a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.hero-links a:hover {
+  text-decoration: none;
+}
+
+.hero-links .link-sep {
+  margin: 0 6px;
+  color: #666;
+}
+
+.section {
+  margin-top: 40px;
+}
+
+.section h2 {
+  font-size: 22px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 6px;
+}
+
+.experience-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-left: 2px solid #ccc;
+}
+
+.experience-list li {
+  display: flex;
+  gap: 16px;
+  padding: 16px 0 16px 16px;
+  position: relative;
+}
+
+.experience-list li::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: 22px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #222;
+}
+
+.exp-time {
+  flex: 0 0 140px;
+  font-weight: 500;
+  color: #555;
+}
+
+.exp-content {
+  flex: 1;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.exp-content a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.exp-content a:hover {
+  text-decoration: none;
+}
+
+.project-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.project-list li {
+  padding: 16px 18px;
+  margin-bottom: 14px;
+  background-color: #fdfbf6;
+  border-radius: 10px;
+  border: 1px solid #e0ddd5;
+}
+
+.proj-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.proj-meta {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.proj-desc {
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* 作品集模块 */
+.portfolio-row {
+  display: flex;
+  gap: 16px;
+  align-items: stretch;
+}
+
+.portfolio-group {
+  flex: 1;
+  position: relative;
+  background-color: #fdfbf6;
+  border: 1px solid #e0ddd5;
+  border-radius: 14px;
+  padding: 36px 14px 14px;
+  margin-top: 24px;
+}
+
+.portfolio-group-wide {
+  margin-top: 48px;
+}
+
+.portfolio-group-badge {
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.badge-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  border: 2px solid #fff;
+}
+
+.badge-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.portfolio-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.portfolio-cards-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.portfolio-card {
+  text-decoration: none;
+  color: #222;
+  background-color: #fff;
+  border: 1px solid #e8e5de;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  display: block;
+}
+
+.portfolio-card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+.portfolio-thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-color: #e8e5de;
+}
+
+.portfolio-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.portfolio-title {
+  padding: 10px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* 个人爱好模块 */
+.hobby-block {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 16px 0;
+}
+
+.hobby-media {
+  flex: 0 0 220px;
+}
+
+.hobby-img {
+  width: 220px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  display: block;
+}
+
+.hobby-img-badminton {
+  width: 220px;
+  height: 293px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  display: block;
+}
+
+.hobby-text {
+  flex: 1;
+  font-size: 14px;
+  line-height: 1.8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 720px) {
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-photo {
+    align-self: center;
+    margin-top: 16px;
+  }
+
+  .exp-time {
+    flex-basis: 110px;
+  }
+
+  .portfolio-row {
+    flex-direction: column;
+  }
+
+  .portfolio-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .portfolio-cards-4 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hobby-block {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hobby-media {
+    width: 100%;
+  }
+
+  .hobby-img,
+  .hobby-img-badminton {
+    width: 100%;
+    height: auto;
+  }
+
+  .hobby-text {
+    min-height: unset;
+  }
+}
