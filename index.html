@@ -5,7 +5,30 @@
   <title>李毅杰</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<script>
+  function openSurprise(el) {
+    if (el.classList.contains('opened')) return;
+    el.classList.add('opened');
+    const rect = el.getBoundingClientRect();
+    const cx = rect.left + rect.width / 2;
+    const cy = rect.top + rect.height / 2;
+    const emojis = ['🎉', '✨', '⭐', '🌟', '💥', '🎊', '🎈'];
+    for (let i = 0; i < 12; i++) {
+      const p = document.createElement('div');
+      p.className = 'particle';
+      p.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      const angle = (i / 12) * 2 * Math.PI;
+      const dist = 60 + Math.random() * 60;
+      p.style.left = cx + 'px';
+      p.style.top = cy + 'px';
+      p.style.setProperty('--dx', Math.cos(angle) * dist + 'px');
+      p.style.setProperty('--dy', Math.sin(angle) * dist + 'px');
+      document.body.appendChild(p);
+      setTimeout(() => p.remove(), 950);
+    }
+  }
+</script>
+  <body>
   <div class="page">
     <header class="hero">
       <div class="hero-text">
@@ -36,8 +59,29 @@
         <li>
           <div class="exp-time">2025.09 – 至今</div>
           <div class="exp-content">
-            在京东辅食组担任助理采销，独立负责短视频和直播工作，经历了人生中第一个双十一大促，
-            同时搬出学校宿舍，开始体验独居生活。
+            在京东辅食组担任助理采销，独立负责短视频和直播工作。
+<div class="surprise-container">
+  <div class="surprise-item" id="surprise1" onclick="openSurprise(this)">
+    <div class="chest-closed">
+      <span class="chest-icon">🎁</span>
+      <span class="chest-hint">点击开启</span>
+    </div>
+    <div class="chest-open">
+      <span class="chest-sparkles">✨🎉✨</span>
+      <span class="chest-text">经历了人生中第一个双十一大促！</span>
+    </div>
+  </div>
+  <div class="surprise-item" id="surprise2" onclick="openSurprise(this)">
+    <div class="chest-closed">
+      <span class="chest-icon">🎁</span>
+      <span class="chest-hint">点击开启</span>
+    </div>
+    <div class="chest-open">
+      <span class="chest-sparkles">🏠🌟🏠</span>
+      <span class="chest-text">搬出学校宿舍，开始体验独居生活！</span>
+    </div>
+  </div>
+</div>
           </div>
         </li>
         <li>
