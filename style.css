@@ -318,7 +318,110 @@ h1 {
   align-items: center;
   justify-content: center;
 }
+/* 宝箱惊喜模块 */
+.surprise-container {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
+.surprise-item {
+  display: inline-flex;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+}
+
+.chest-closed {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #fff8e1, #fff3cd);
+  border: 2px dashed #f0c040;
+  border-radius: 10px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 2px 8px rgba(240, 192, 64, 0.2);
+}
+
+.surprise-item:not(.opened) .chest-closed:hover {
+  transform: scale(1.04) translateY(-1px);
+  box-shadow: 0 4px 14px rgba(240, 192, 64, 0.35);
+}
+
+.chest-icon {
+  font-size: 22px;
+  animation: chest-wiggle 2.2s ease-in-out infinite;
+  display: inline-block;
+}
+
+@keyframes chest-wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  20% { transform: rotate(-8deg); }
+  40% { transform: rotate(8deg); }
+  60% { transform: rotate(-4deg); }
+  80% { transform: rotate(4deg); }
+}
+
+.chest-hint {
+  font-size: 13px;
+  color: #b8860b;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.chest-open {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+  border: 2px solid #81c784;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(129, 199, 132, 0.3);
+  animation: chest-reveal 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes chest-reveal {
+  0% { opacity: 0; transform: scale(0.6) translateY(8px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.chest-sparkles {
+  font-size: 18px;
+  animation: sparkle-spin 0.6s ease-out;
+  display: inline-block;
+}
+
+@keyframes sparkle-spin {
+  0% { transform: rotate(-20deg) scale(0.5); opacity: 0; }
+  60% { transform: rotate(10deg) scale(1.2); opacity: 1; }
+  100% { transform: rotate(0deg) scale(1); opacity: 1; }
+}
+
+.chest-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2e7d32;
+  line-height: 1.5;
+}
+
+.surprise-item.opened .chest-closed { display: none; }
+.surprise-item.opened .chest-open { display: flex; }
+
+.particle {
+  position: fixed;
+  pointer-events: none;
+  font-size: 16px;
+  animation: particle-fly 0.9s ease-out forwards;
+  z-index: 9999;
+}
+
+@keyframes particle-fly {
+  0% { opacity: 1; transform: translate(0, 0) scale(1); }
+  100% { opacity: 0; transform: translate(var(--dx), var(--dy)) scale(0.3); }
+}
 @media (max-width: 720px) {
   .hero {
     flex-direction: column;
@@ -365,6 +468,7 @@ h1 {
     min-height: unset;
   }
 }
+
 
 
 
