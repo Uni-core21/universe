@@ -1,10 +1,8 @@
 @font-face {
-  font-family: "Zpix";
-  src: url("Zpix.woff2") format("woff2"),
-       url("Zpix.woff") format("woff"),
-       url("Zpix.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
+    font-family: "Zpix";
+    src: url("zpix.ttf") format("truetype");  /* 只保留ttf，改成小写 */
+    font-weight: normal;
+    font-style: normal;
 }
 
 body {
@@ -367,5 +365,6 @@ h1 {
     min-height: unset;
   }
 }
+
 
 
